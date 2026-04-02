@@ -74,7 +74,7 @@
 ## Fase 9 — Docs e Packaging
 
 - [x] Criar docs/quickstart.md
-- [ ] Criar docs/architecture.md
+- [x] Criar docs/architecture.md
 - [ ] Criar docs/phase-1-build.md
 - [ ] Criar docs/phase-2-optimize.md
 - [ ] Criar docs/adapters.md
