@@ -66,7 +66,7 @@
 
 ## Fase 8 — MCP Server
 
-- [ ] Criar mcp/__init__.py
+- [x] Criar mcp/__init__.py
 - [ ] Criar mcp/server.py (FastAPI + tools: build_start, build_status, optimize_start, optimize_status, etc)
 - [ ] Criar mcp/mcp_schema.json
 - [ ] Criar tests/test_mcp_server.py
