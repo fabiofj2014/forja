@@ -6,7 +6,7 @@
 
 > Instale uma vez. Construa e otimize qualquer projeto com qualquer agente de IA.
 
-Forja é um plugin que orquestra o **Ralph Wiggum Loop** (build) e o **Autoresearch pattern** (optimize) num pacote instalável que funciona com Claude Code, OpenCode, Codex CLI e qualquer agente shell.
+Forja é um plugin que orquestra o **[Ralph Wiggum Loop](https://github.com/snarktank/ralph)** (build) e o **[Autoresearch pattern](https://github.com/karpathy/autoresearch)** (optimize) num pacote instalável que funciona com Claude Code, OpenCode, Codex CLI e qualquer agente shell. Usa o **[Spec-Kit](https://github.com/github/spec-kit)** para gerar os artefatos de planejamento.
 
 ---
 
