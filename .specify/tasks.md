@@ -49,7 +49,7 @@
 ## Fase 6 — Prompts e Templates
 
 - [x] Criar prompts/build/Prompt.md (instrução mestre do Ralph)
-- [ ] Criar prompts/optimize/program.md (instrução mestre do Autoresearch)
+- [x] Criar prompts/optimize/program.md (instrução mestre do Autoresearch)
 - [ ] Criar prompts/templates/constitution_template.md
 - [ ] Criar prompts/templates/program_template.md
 
