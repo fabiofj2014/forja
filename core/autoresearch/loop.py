@@ -47,7 +47,11 @@ class ExperimentRunResult:
 
 
 def _revert_changes(project_root: Path) -> None:
-    """Revert all uncommitted changes in the working tree."""
+    """Revert uncommitted changes in the working tree.
+
+    Reverts tracked files and removes new untracked files, but preserves
+    state/ and logs/ directories which are managed by Forja.
+    """
     subprocess.run(
         ["git", "checkout", "--", "."],
         cwd=project_root,
@@ -55,7 +59,7 @@ def _revert_changes(project_root: Path) -> None:
         check=False,
     )
     subprocess.run(
-        ["git", "clean", "-fd"],
+        ["git", "clean", "-fd", "--exclude=state/", "--exclude=logs/"],
         cwd=project_root,
         capture_output=True,
         check=False,
