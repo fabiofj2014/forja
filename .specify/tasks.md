@@ -75,9 +75,9 @@
 
 - [x] Criar docs/quickstart.md
 - [x] Criar docs/architecture.md
-- [ ] Criar docs/phase-1-build.md
-- [ ] Criar docs/phase-2-optimize.md
-- [ ] Criar docs/adapters.md
-- [ ] Criar docs/faq.md
+- [x] Criar docs/phase-1-build.md
+- [x] Criar docs/phase-2-optimize.md
+- [x] Criar docs/adapters.md
+- [x] Criar docs/faq.md
 - [ ] Finalizar pyproject.toml (classifiers, URLs, readme)
 - [ ] Testar instalação via `uv tool install .`
