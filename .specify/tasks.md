@@ -21,7 +21,7 @@
 - [x] Criar core/ralph/loop.py (run_iteration, run_loop com stall detection)
 - [x] Criar core/ralph/ralph.sh (bash entry point, banner, loop, stall abort)
 - [x] Criar tests/test_task_parser.py (pendentes, concluídas, blocked, edge cases)
-- [ ] Criar tests/test_prompt_builder.py
+- [x] Criar tests/test_prompt_builder.py
 - [ ] Criar tests/test_ralph_loop.py
 
 ## Fase 3 — CLI (Build)
