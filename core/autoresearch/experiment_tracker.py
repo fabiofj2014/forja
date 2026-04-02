@@ -2,7 +2,7 @@
 
 import json
 from dataclasses import asdict, dataclass
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 
@@ -88,7 +88,7 @@ class ExperimentTracker:
             direction=direction,
             improved=improved,
             commit_sha=commit_sha,
-            timestamp=datetime.utcnow().isoformat(),
+            timestamp=datetime.now(UTC).isoformat(),
         )
         self._experiments.append(exp)
         self._save()

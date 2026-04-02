@@ -2,7 +2,7 @@
 
 import json
 from dataclasses import asdict, dataclass
-from datetime import datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 from core.config import METRIC_DIRECTION, METRIC_KEY
@@ -60,7 +60,7 @@ class BaselineManager:
             value=value,
             direction=direction,
             commit_sha=commit_sha,
-            timestamp=datetime.utcnow().isoformat(),
+            timestamp=datetime.now(UTC).isoformat(),
         )
         self._file.parent.mkdir(parents=True, exist_ok=True)
         self._file.write_text(json.dumps(asdict(baseline), indent=2), encoding="utf-8")
