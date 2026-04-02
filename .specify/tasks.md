@@ -3,7 +3,7 @@
 ## Fase 1 — Foundation
 
 - [x] Criar pyproject.toml com metadata, entry point `forja`, deps de dev (pytest, ruff)
-- [ ] Criar core/__init__.py e core/config.py (PROJECT_ROOT, paths, env vars com defaults)
+- [x] Criar core/__init__.py e core/config.py (PROJECT_ROOT, paths, env vars com defaults)
 - [ ] Criar core/utils.py (read_file, parse_markdown_sections, ensure_dir)
 - [ ] Criar core/logger.py (setup_logger com formato timestamped, log por iteração)
 - [ ] Criar core/git_manager.py (has_changes, commit, get_recent_commits, stall_check)

@@ -30,5 +30,8 @@ line-length = 88
 select = ["E", "F", "I", "UP"]
 ignore = []
 
+[tool.hatch.build.targets.wheel]
+packages = ["core"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
