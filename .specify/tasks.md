@@ -80,4 +80,4 @@
 - [x] Criar docs/adapters.md
 - [x] Criar docs/faq.md
 - [x] Finalizar pyproject.toml (classifiers, URLs, readme)
-- [ ] Testar instalação via `uv tool install .`
+- [x] Testar instalação via `uv tool install .`
