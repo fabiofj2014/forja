@@ -1,0 +1,30 @@
+{
+  "name": "forja",
+  "version": "0.1.0",
+  "description": "Ralph Loop + Autoresearch plugin for Claude Code",
+  "author": "Fabio FJ",
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "forja-build",
+      "description": "Start or check the Forja build loop (Ralph Loop)",
+      "file": "SKILL.md"
+    }
+  ],
+  "hooks": {
+    "pre_task": "hooks/pre-task.sh",
+    "post_task": "hooks/post-task.sh"
+  },
+  "commands": {
+    "build": "forja build start",
+    "build-status": "forja build status",
+    "build-next": "forja build next",
+    "optimize": "forja optimize start",
+    "optimize-status": "forja optimize status"
+  },
+  "env": {
+    "AGENT_CLI": "claude",
+    "MAX_ITERATIONS": "50",
+    "STALL_LIMIT": "3"
+  }
+}

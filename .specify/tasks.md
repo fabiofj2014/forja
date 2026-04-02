@@ -56,7 +56,7 @@
 ## Fase 7 — Adapters
 
 - [x] Criar adapters/claude-code/SKILL.md
-- [ ] Criar adapters/claude-code/plugin.json
+- [x] Criar adapters/claude-code/plugin.json
 - [ ] Criar adapters/claude-code/hooks/ (pre-task.sh, post-task.sh)
 - [ ] Criar adapters/claude-code/CLAUDE.md (template)
 - [ ] Criar adapters/opencode/spec-kit-loop.ts
