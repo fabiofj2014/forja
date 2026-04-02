@@ -69,7 +69,7 @@
 - [x] Criar mcp/__init__.py
 - [x] Criar mcp/server.py (FastAPI + tools: build_start, build_status, optimize_start, optimize_status, etc)
 - [x] Criar mcp/mcp_schema.json
-- [ ] Criar tests/test_mcp_server.py
+- [x] Criar tests/test_mcp_server.py
 
 ## Fase 9 — Docs e Packaging
 
