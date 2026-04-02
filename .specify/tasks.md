@@ -50,8 +50,8 @@
 
 - [x] Criar prompts/build/Prompt.md (instrução mestre do Ralph)
 - [x] Criar prompts/optimize/program.md (instrução mestre do Autoresearch)
-- [ ] Criar prompts/templates/constitution_template.md
-- [ ] Criar prompts/templates/program_template.md
+- [x] Criar prompts/templates/constitution_template.md
+- [x] Criar prompts/templates/program_template.md
 
 ## Fase 7 — Adapters
 
