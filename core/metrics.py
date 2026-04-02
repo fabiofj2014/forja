@@ -40,7 +40,9 @@ def read_metric(metrics_file: Path, key: str = METRIC_KEY) -> float:
         raise MetricError(f"Metric '{key}' is not numeric: {data[key]}") from e
 
 
-def compare_metrics(baseline: float, candidate: float, direction: str = METRIC_DIRECTION) -> float:
+def compare_metrics(
+    baseline: float, candidate: float, direction: str = METRIC_DIRECTION
+) -> float:
     """Compute the improvement of candidate over baseline.
 
     Args:
@@ -55,14 +57,18 @@ def compare_metrics(baseline: float, candidate: float, direction: str = METRIC_D
         MetricError: If direction is not 'lower' or 'higher'.
     """
     if direction not in ("lower", "higher"):
-        raise MetricError(f"Invalid direction '{direction}': must be 'lower' or 'higher'")
+        raise MetricError(
+            f"Invalid direction '{direction}': must be 'lower' or 'higher'"
+        )
 
     if direction == "lower":
         return baseline - candidate
     return candidate - baseline
 
 
-def is_improvement(baseline: float, candidate: float, direction: str = METRIC_DIRECTION) -> bool:
+def is_improvement(
+    baseline: float, candidate: float, direction: str = METRIC_DIRECTION
+) -> bool:
     """Return True if candidate is strictly better than baseline.
 
     Args:

@@ -37,7 +37,7 @@ def build_prompt(
         "",
         "## Current Task",
         "",
-        f"Implement the following task:",
+        "Implement the following task:",
         f"> {task.text}",
         "",
         "## Constitution (Inviolable Principles)",
@@ -72,18 +72,20 @@ def build_status_prompt(tasks_file: Path, prompt_template_file: Path) -> str:
     tasks_content = read_file(tasks_file)
     template = read_file(prompt_template_file)
 
-    return "\n".join([
-        template,
-        "",
-        "## Status Check",
-        "",
-        "Review the current state of tasks.md and report:",
-        "- How many tasks are done [x]",
-        "- How many are pending [ ]",
-        "- How many are blocked [BLOCKED]",
-        "- What the next pending task is",
-        "",
-        "## Current tasks.md",
-        "",
-        tasks_content,
-    ])
+    return "\n".join(
+        [
+            template,
+            "",
+            "## Status Check",
+            "",
+            "Review the current state of tasks.md and report:",
+            "- How many tasks are done [x]",
+            "- How many are pending [ ]",
+            "- How many are blocked [BLOCKED]",
+            "- What the next pending task is",
+            "",
+            "## Current tasks.md",
+            "",
+            tasks_content,
+        ]
+    )

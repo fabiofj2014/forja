@@ -5,17 +5,38 @@ from pathlib import Path
 
 import pytest
 
-from core.git_manager import GitError, commit, get_recent_commits, has_changes, stall_check
+from core.git_manager import (
+    GitError,
+    commit,
+    get_recent_commits,
+    has_changes,
+    stall_check,
+)
 
 
 def _init_repo(path: Path) -> None:
     """Initialize a git repo with a base commit."""
     subprocess.run(["git", "init"], cwd=path, capture_output=True, check=True)
-    subprocess.run(["git", "config", "user.email", "test@test.com"], cwd=path, capture_output=True, check=True)
-    subprocess.run(["git", "config", "user.name", "Test"], cwd=path, capture_output=True, check=True)
+    subprocess.run(
+        ["git", "config", "user.email", "test@test.com"],
+        cwd=path,
+        capture_output=True,
+        check=True,
+    )
+    subprocess.run(
+        ["git", "config", "user.name", "Test"],
+        cwd=path,
+        capture_output=True,
+        check=True,
+    )
     (path / "init.txt").write_text("init", encoding="utf-8")
     subprocess.run(["git", "add", "-A"], cwd=path, capture_output=True, check=True)
-    subprocess.run(["git", "commit", "-m", "chore: init"], cwd=path, capture_output=True, check=True)
+    subprocess.run(
+        ["git", "commit", "-m", "chore: init"],
+        cwd=path,
+        capture_output=True,
+        check=True,
+    )
 
 
 def test_has_changes_false_on_clean_repo(tmp_path: Path):

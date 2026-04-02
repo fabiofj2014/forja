@@ -2,7 +2,6 @@
 
 import argparse
 import sys
-from pathlib import Path
 
 from core.config import (
     AGENT_CLI,
@@ -20,7 +19,10 @@ def _cmd_build_start(args: argparse.Namespace) -> int:
     """Start the Ralph Loop (build phase)."""
     from core.ralph.loop import LoopStatus, run_loop
 
-    print(f"[forja] Starting build loop (agent={args.agent}, max_iter={args.max_iterations})")
+    print(
+        f"[forja] Starting build loop "
+        f"(agent={args.agent}, max_iter={args.max_iterations})"
+    )
 
     status = run_loop(
         tasks_file=TASKS_FILE,
@@ -58,7 +60,10 @@ def _cmd_build_status(args: argparse.Namespace) -> int:
     blocked = sum(1 for t in tasks if t.status == "blocked")
     total = len(tasks)
 
-    print(f"[forja] Build status: {done}/{total} done, {pending} pending, {blocked} blocked")
+    print(
+        f"[forja] Build status: {done}/{total} done, "
+        f"{pending} pending, {blocked} blocked"
+    )
     return 0
 
 

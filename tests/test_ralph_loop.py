@@ -4,11 +4,8 @@ import subprocess
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-import pytest
-
 from core.ralph.loop import LoopStatus, run_loop
-from core.ralph.task_parser import next_pending, parse_tasks
-
+from core.ralph.task_parser import next_pending
 
 TASKS_CONTENT = """\
 # Tasks
@@ -21,11 +18,20 @@ TASKS_CONTENT = """\
 
 def _init_repo(path: Path) -> None:
     subprocess.run(["git", "init"], cwd=path, capture_output=True, check=True)
-    subprocess.run(["git", "config", "user.email", "t@t.com"], cwd=path, capture_output=True, check=True)
-    subprocess.run(["git", "config", "user.name", "T"], cwd=path, capture_output=True, check=True)
+    subprocess.run(
+        ["git", "config", "user.email", "t@t.com"],
+        cwd=path,
+        capture_output=True,
+        check=True,
+    )
+    subprocess.run(
+        ["git", "config", "user.name", "T"], cwd=path, capture_output=True, check=True
+    )
     (path / "init.txt").write_text("init")
     subprocess.run(["git", "add", "-A"], cwd=path, capture_output=True, check=True)
-    subprocess.run(["git", "commit", "-m", "init"], cwd=path, capture_output=True, check=True)
+    subprocess.run(
+        ["git", "commit", "-m", "init"], cwd=path, capture_output=True, check=True
+    )
 
 
 def _setup(tmp_path: Path) -> tuple[Path, Path, Path, Path]:
@@ -46,13 +52,16 @@ def _setup(tmp_path: Path) -> tuple[Path, Path, Path, Path]:
     prompt_file.write_text("You are a build agent.", encoding="utf-8")
 
     subprocess.run(["git", "add", "-A"], cwd=tmp_path, capture_output=True, check=True)
-    subprocess.run(["git", "commit", "-m", "setup"], cwd=tmp_path, capture_output=True, check=True)
+    subprocess.run(
+        ["git", "commit", "-m", "setup"], cwd=tmp_path, capture_output=True, check=True
+    )
 
     return tasks_file, constitution, prompt_file, tmp_path
 
 
 def _make_successful_agent(tmp_path: Path, tasks_file: Path):
     """Return a mock that simulates a successful agent: marks the next task done."""
+
     def side_effect(cmd, **kwargs):
         task = next_pending(tasks_file)
         if task:

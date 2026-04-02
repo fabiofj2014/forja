@@ -1,9 +1,6 @@
 """Tests for core/config.py."""
 
 import os
-from pathlib import Path
-
-import pytest
 
 
 def test_project_root_contains_pyproject():
@@ -13,14 +10,27 @@ def test_project_root_contains_pyproject():
 
 
 def test_specify_paths_are_relative_to_root():
-    from core.config import CONSTITUTION_FILE, PLAN_FILE, PROJECT_ROOT, SPEC_FILE, TASKS_FILE
+    from core.config import (
+        CONSTITUTION_FILE,
+        PLAN_FILE,
+        PROJECT_ROOT,
+        SPEC_FILE,
+        TASKS_FILE,
+    )
 
     for path in (CONSTITUTION_FILE, SPEC_FILE, PLAN_FILE, TASKS_FILE):
         assert path.is_relative_to(PROJECT_ROOT)
 
 
 def test_default_env_vars():
-    from core.config import AGENT_CLI, MAX_EXPERIMENTS, MAX_ITERATIONS, METRIC_DIRECTION, METRIC_KEY, STALL_LIMIT
+    from core.config import (
+        AGENT_CLI,
+        MAX_EXPERIMENTS,
+        MAX_ITERATIONS,
+        METRIC_DIRECTION,
+        METRIC_KEY,
+        STALL_LIMIT,
+    )
 
     assert AGENT_CLI == os.environ.get("AGENT_CLI", "claude")
     assert MAX_ITERATIONS == int(os.environ.get("MAX_ITERATIONS", "50"))

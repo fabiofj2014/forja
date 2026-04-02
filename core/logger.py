@@ -4,7 +4,9 @@ import logging
 from pathlib import Path
 
 
-def setup_logger(name: str, log_file: Path | None = None, level: int = logging.INFO) -> logging.Logger:
+def setup_logger(
+    name: str, log_file: Path | None = None, level: int = logging.INFO
+) -> logging.Logger:
     """Create and configure a logger with timestamp format.
 
     Args:

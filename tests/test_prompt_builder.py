@@ -63,7 +63,9 @@ def test_build_prompt_with_extra_context(tmp_path: Path):
     template = _write(tmp_path, "Prompt.md", "Base.")
     task = _make_task("Some task")
 
-    prompt = build_prompt(task, constitution, template, extra_context="Important context here.")
+    prompt = build_prompt(
+        task, constitution, template, extra_context="Important context here."
+    )
 
     assert "Important context here." in prompt
 
