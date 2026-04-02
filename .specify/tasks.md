@@ -79,5 +79,5 @@
 - [x] Criar docs/phase-2-optimize.md
 - [x] Criar docs/adapters.md
 - [x] Criar docs/faq.md
-- [ ] Finalizar pyproject.toml (classifiers, URLs, readme)
+- [x] Finalizar pyproject.toml (classifiers, URLs, readme)
 - [ ] Testar instalação via `uv tool install .`
