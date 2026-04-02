@@ -38,7 +38,7 @@
 - [x] Criar core/autoresearch/loop.py (run_experiment, run_loop com stall detection)
 - [x] Criar core/autoresearch/autoresearch.sh (bash entry point, banner, loop, stall abort)
 - [x] Criar tests/test_experiment_tracker.py
-- [ ] Criar tests/test_baseline_manager.py
+- [x] Criar tests/test_baseline_manager.py
 - [ ] Criar tests/test_autoresearch_loop.py
 
 ## Fase 5 — CLI (Optimize)
