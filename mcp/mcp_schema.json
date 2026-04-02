@@ -1,0 +1,108 @@
+{
+  "name": "forja",
+  "version": "0.1.0",
+  "description": "Forja MCP Server — build and optimize tools",
+  "tools": [
+    {
+      "name": "build_status",
+      "description": "Get current Ralph Loop build progress (done/pending/blocked counts)",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "build_next",
+      "description": "Get the next pending task from tasks.md",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "build_start",
+      "description": "Start the Ralph Loop build process in the background",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "agent": {
+            "type": "string",
+            "description": "Agent CLI to use (e.g., claude, opencode, codex)",
+            "default": "claude"
+          },
+          "max_iterations": {
+            "type": "integer",
+            "description": "Maximum number of loop iterations",
+            "default": 50
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "optimize_status",
+      "description": "Get current Autoresearch optimization progress",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "optimize_history",
+      "description": "Get recent optimization experiment history",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "last": {
+            "type": "integer",
+            "description": "Number of most recent experiments to return",
+            "default": 10
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "optimize_baseline",
+      "description": "Get the current optimization baseline metric value",
+      "inputSchema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "optimize_start",
+      "description": "Start the Autoresearch optimization loop in the background",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "agent": {
+            "type": "string",
+            "description": "Agent CLI to use",
+            "default": "claude"
+          },
+          "metric_key": {
+            "type": "string",
+            "description": "Metric key to optimize",
+            "default": "val_bpb"
+          },
+          "max_experiments": {
+            "type": "integer",
+            "description": "Maximum number of experiments",
+            "default": 100
+          }
+        },
+        "required": []
+      }
+    }
+  ],
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8765,
+    "base_url": "http://127.0.0.1:8765/tools"
+  }
+}
