@@ -15,7 +15,7 @@
 
 ## Fase 2 — Ralph Loop (Build)
 
-- [ ] Criar core/ralph/__init__.py
+- [x] Criar core/ralph/__init__.py
 - [ ] Criar core/ralph/task_parser.py (parse_tasks, next_pending, mark_done, mark_blocked)
 - [ ] Criar core/ralph/prompt_builder.py (build_prompt com task, constitution, contexto)
 - [ ] Criar core/ralph/loop.py (run_iteration, run_loop com stall detection)
