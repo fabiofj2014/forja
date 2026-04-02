@@ -5,25 +5,31 @@ from pathlib import Path
 
 
 def _find_project_root() -> Path:
-    """Find the project root by walking up from CWD, then from this file.
+    """Find the project root.
 
-    When installed as a global tool, CWD is the user's project directory.
-    During development, the package directory itself is the project root.
+    Priority:
+    1. Walk up from CWD looking for .specify/ (user's project when installed globally)
+    2. Walk up from CWD looking for pyproject.toml (development)
+    3. Fall back to CWD itself (user ran the tool from their project dir)
     """
-    # First: walk up from CWD (works for globally installed tools)
-    current = Path.cwd()
+    cwd = Path.cwd()
+
+    # Look for .specify/ walking up from CWD — strongest signal
+    current = cwd
     while current != current.parent:
-        if (current / ".specify").exists() or (current / "pyproject.toml").exists():
+        if (current / ".specify").exists():
             return current
         current = current.parent
 
-    # Fallback: walk up from this file (works in development)
-    current = Path(__file__).parent
+    # Look for pyproject.toml walking up from CWD — works in dev
+    current = cwd
     while current != current.parent:
         if (current / "pyproject.toml").exists():
             return current
         current = current.parent
-    return Path(__file__).parent.parent
+
+    # Fall back to CWD — when installed globally, user's cwd is their project
+    return cwd
 
 
 PROJECT_ROOT: Path = _find_project_root()
