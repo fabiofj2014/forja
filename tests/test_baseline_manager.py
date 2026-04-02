@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from core.autoresearch.baseline_manager import Baseline, BaselineManager
+from core.autoresearch.baseline_manager import BaselineManager
 
 
 def test_capture_baseline(tmp_path: Path):

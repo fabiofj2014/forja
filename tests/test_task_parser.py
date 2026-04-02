@@ -2,10 +2,7 @@
 
 from pathlib import Path
 
-import pytest
-
 from core.ralph.task_parser import (
-    Task,
     all_done,
     mark_blocked,
     mark_done,

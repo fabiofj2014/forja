@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from core.autoresearch.experiment_tracker import Experiment, ExperimentTracker
+from core.autoresearch.experiment_tracker import ExperimentTracker
 
 
 def test_log_experiment_persists(tmp_path: Path):

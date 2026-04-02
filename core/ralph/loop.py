@@ -8,16 +8,16 @@ from pathlib import Path
 from core.config import (
     AGENT_CLI,
     BUILD_LOGS_DIR,
+    BUILD_PROMPT_FILE,
     CONSTITUTION_FILE,
     MAX_ITERATIONS,
     STALL_LIMIT,
     TASKS_FILE,
-    BUILD_PROMPT_FILE,
 )
 from core.git_manager import commit, has_changes
 from core.logger import get_iteration_logger
-from core.ralph.task_parser import Task, all_done, mark_blocked, mark_done, next_pending
 from core.ralph.prompt_builder import build_prompt
+from core.ralph.task_parser import Task, all_done, mark_blocked, mark_done, next_pending
 from core.utils import ensure_dir
 
 

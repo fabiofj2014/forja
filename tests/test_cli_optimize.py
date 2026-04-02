@@ -1,10 +1,7 @@
 """Tests for core/cli.py — optimize subcommands."""
 
-import json
 from pathlib import Path
 from unittest.mock import patch
-
-import pytest
 
 from core.cli import _build_parser
 
@@ -48,13 +45,20 @@ def test_parser_optimize_start_defaults():
 
 def test_parser_optimize_start_custom():
     parser = _build_parser()
-    args = parser.parse_args([
-        "optimize", "start",
-        "--agent", "opencode",
-        "--metric-key", "accuracy",
-        "--direction", "higher",
-        "--max-experiments", "20",
-    ])
+    args = parser.parse_args(
+        [
+            "optimize",
+            "start",
+            "--agent",
+            "opencode",
+            "--metric-key",
+            "accuracy",
+            "--direction",
+            "higher",
+            "--max-experiments",
+            "20",
+        ]
+    )
     assert args.agent == "opencode"
     assert args.metric_key == "accuracy"
     assert args.direction == "higher"
@@ -64,6 +68,7 @@ def test_parser_optimize_start_custom():
 def test_cmd_optimize_status_empty(tmp_path: Path, capsys):
     with patch("core.cli.STATE_DIR", tmp_path / "state"):
         from core.cli import _cmd_optimize_status
+
         parser = _build_parser()
         args = parser.parse_args(["optimize", "status"])
         ret = _cmd_optimize_status(args)
@@ -76,6 +81,7 @@ def test_cmd_optimize_status_empty(tmp_path: Path, capsys):
 def test_cmd_optimize_history_empty(tmp_path: Path, capsys):
     with patch("core.cli.STATE_DIR", tmp_path / "state"):
         from core.cli import _cmd_optimize_history
+
         parser = _build_parser()
         args = parser.parse_args(["optimize", "history"])
         ret = _cmd_optimize_history(args)
@@ -88,6 +94,7 @@ def test_cmd_optimize_history_empty(tmp_path: Path, capsys):
 def test_cmd_optimize_baseline_no_baseline(tmp_path: Path, capsys):
     with patch("core.cli.STATE_DIR", tmp_path / "state"):
         from core.cli import _cmd_optimize_baseline
+
         parser = _build_parser()
         args = parser.parse_args(["optimize", "baseline"])
         ret = _cmd_optimize_baseline(args)

@@ -2,7 +2,6 @@
 
 import argparse
 import sys
-from pathlib import Path
 
 from core.config import (
     AGENT_CLI,
@@ -17,8 +16,8 @@ from core.config import (
     OPTIMIZE_LOGS_DIR,
     OPTIMIZE_PROMPT_FILE,
     PROJECT_ROOT,
-    STATE_DIR,
     STALL_LIMIT,
+    STATE_DIR,
     TASKS_FILE,
 )
 
@@ -134,7 +133,8 @@ def _cmd_optimize_status(args: argparse.Namespace) -> int:
     if baseline:
         print(f"[forja] Baseline: {baseline.metric_key}={baseline.value:.4f} ({baseline.direction})")
     if best:
-        print(f"[forja] Best result: {best.metric_key if hasattr(best, 'metric_key') else METRIC_KEY}={best.metric_after:.4f}")
+        metric_key = best.metric_key if hasattr(best, "metric_key") else METRIC_KEY
+        print(f"[forja] Best result: {metric_key}={best.metric_after:.4f}")
     return 0
 
 
@@ -177,7 +177,10 @@ def _cmd_optimize_baseline(args: argparse.Namespace) -> int:
         if baseline is None:
             print("[forja] No baseline recorded yet")
         else:
-            print(f"[forja] Baseline: {baseline.metric_key}={baseline.value:.4f} ({baseline.direction}) @ {baseline.commit_sha}")
+            print(
+                f"[forja] Baseline: {baseline.metric_key}={baseline.value:.4f}"
+                f" ({baseline.direction}) @ {baseline.commit_sha}"
+            )
     return 0
 
 

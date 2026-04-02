@@ -8,7 +8,6 @@ from unittest.mock import MagicMock, patch
 import pytest
 
 from core.autoresearch.baseline_manager import BaselineManager
-from core.autoresearch.experiment_tracker import ExperimentTracker
 from core.autoresearch.loop import OptimizeStatus, run_optimize_loop
 
 
@@ -43,10 +42,12 @@ def _setup(tmp_path: Path, initial_metric: float = 2.0) -> tuple:
 
 def _mock_agent_only(real_run, agent_response: MagicMock):
     """Return a side_effect that mocks only agent calls, passing git through."""
+
     def side_effect(cmd, **kwargs):
         if isinstance(cmd, list) and cmd and cmd[0] == "git":
             return real_run(cmd, **kwargs)
         return agent_response
+
     return side_effect
 
 
@@ -59,8 +60,7 @@ def test_run_optimize_loop_stalls(tmp_path: Path):
     agent_result.stderr = "failed"
 
     real_run = subprocess.run
-    with patch("core.autoresearch.loop.subprocess.run",
-               side_effect=_mock_agent_only(real_run, agent_result)):
+    with patch("core.autoresearch.loop.subprocess.run", side_effect=_mock_agent_only(real_run, agent_result)):
         status = run_optimize_loop(
             metrics_file=metrics_file,
             project_root=tmp_path,
@@ -124,8 +124,7 @@ def test_baseline_captured_on_first_run(tmp_path: Path):
     agent_result.stderr = ""
 
     real_run = subprocess.run
-    with patch("core.autoresearch.loop.subprocess.run",
-               side_effect=_mock_agent_only(real_run, agent_result)):
+    with patch("core.autoresearch.loop.subprocess.run", side_effect=_mock_agent_only(real_run, agent_result)):
         run_optimize_loop(
             metrics_file=metrics_file,
             project_root=tmp_path,

@@ -4,11 +4,8 @@ import subprocess
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-import pytest
-
 from core.ralph.loop import LoopStatus, run_loop
-from core.ralph.task_parser import next_pending, parse_tasks
-
+from core.ralph.task_parser import next_pending
 
 TASKS_CONTENT = """\
 # Tasks
@@ -53,6 +50,7 @@ def _setup(tmp_path: Path) -> tuple[Path, Path, Path, Path]:
 
 def _make_successful_agent(tmp_path: Path, tasks_file: Path):
     """Return a mock that simulates a successful agent: marks the next task done."""
+
     def side_effect(cmd, **kwargs):
         task = next_pending(tasks_file)
         if task:

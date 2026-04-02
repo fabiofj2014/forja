@@ -9,7 +9,6 @@ from core.autoresearch.baseline_manager import BaselineManager
 from core.autoresearch.experiment_tracker import Experiment, ExperimentTracker
 from core.config import (
     AGENT_CLI,
-    AUTORESEARCH_DIR,
     EXPERIMENT_TIMEOUT,
     MAX_EXPERIMENTS,
     METRIC_DIRECTION,
@@ -105,9 +104,13 @@ def run_experiment(
     logger = get_iteration_logger("optimize", experiment_num, log_dir)
     logger.info("Experiment %d — baseline %s=%.4f", experiment_num, metric_key, baseline.value)
 
-    prompt_content = prompt_file.read_text(encoding="utf-8") if prompt_file.exists() else (
-        f"Optimize the code to improve {metric_key} (direction: {direction}). "
-        f"Current baseline: {baseline.value:.4f}."
+    prompt_content = (
+        prompt_file.read_text(encoding="utf-8")
+        if prompt_file.exists()
+        else (
+            f"Optimize the code to improve {metric_key} (direction: {direction}). "
+            f"Current baseline: {baseline.value:.4f}."
+        )
     )
 
     iter_log = log_dir / f"exp_{experiment_num:04d}.log"

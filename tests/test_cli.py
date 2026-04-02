@@ -1,10 +1,7 @@
 """Tests for core/cli.py — build subcommands."""
 
-import subprocess
 from pathlib import Path
-from unittest.mock import MagicMock, patch
-
-import pytest
+from unittest.mock import patch
 
 from core.cli import _build_parser
 

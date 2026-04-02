@@ -5,7 +5,13 @@ from pathlib import Path
 
 import pytest
 
-from core.git_manager import GitError, commit, get_recent_commits, has_changes, stall_check
+from core.git_manager import (
+    GitError,
+    commit,
+    get_recent_commits,
+    has_changes,
+    stall_check,
+)
 
 
 def _init_repo(path: Path) -> None:
