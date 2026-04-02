@@ -28,7 +28,7 @@
 
 - [x] Criar core/cli.py com argparse (forja build start|status|next)
 - [x] Registrar entry point `forja` no pyproject.toml
-- [ ] Criar tests/test_cli.py
+- [x] Criar tests/test_cli.py
 
 ## Fase 4 — Autoresearch Loop (Optimize)
 
