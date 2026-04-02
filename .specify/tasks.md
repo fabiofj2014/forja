@@ -44,7 +44,7 @@
 ## Fase 5 — CLI (Optimize)
 
 - [x] Adicionar subcommands optimize (start, status, history, baseline) ao cli.py
-- [ ] Criar tests/test_cli_optimize.py
+- [x] Criar tests/test_cli_optimize.py
 
 ## Fase 6 — Prompts e Templates
 
