@@ -34,7 +34,7 @@
 
 - [x] Criar core/autoresearch/__init__.py
 - [x] Criar core/autoresearch/experiment_tracker.py (log_experiment, get_history, best_result)
-- [ ] Criar core/autoresearch/baseline_manager.py (capture_baseline, load_baseline, update_baseline)
+- [x] Criar core/autoresearch/baseline_manager.py (capture_baseline, load_baseline, update_baseline)
 - [ ] Criar core/autoresearch/loop.py (run_experiment, run_loop com stall detection)
 - [ ] Criar core/autoresearch/autoresearch.sh (bash entry point, banner, loop, stall abort)
 - [ ] Criar tests/test_experiment_tracker.py
