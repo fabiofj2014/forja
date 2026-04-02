@@ -20,7 +20,7 @@
 - [x] Criar core/ralph/prompt_builder.py (build_prompt com task, constitution, contexto)
 - [x] Criar core/ralph/loop.py (run_iteration, run_loop com stall detection)
 - [x] Criar core/ralph/ralph.sh (bash entry point, banner, loop, stall abort)
-- [ ] Criar tests/test_task_parser.py (pendentes, concluídas, blocked, edge cases)
+- [x] Criar tests/test_task_parser.py (pendentes, concluídas, blocked, edge cases)
 - [ ] Criar tests/test_prompt_builder.py
 - [ ] Criar tests/test_ralph_loop.py
 
