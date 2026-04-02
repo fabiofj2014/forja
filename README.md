@@ -235,6 +235,22 @@ forja/
 
 ---
 
+## Built on
+
+| Projeto | Papel no Forja |
+|---|---|
+| [Spec-Kit](https://github.com/github/spec-kit) | Gera os 4 artefatos de planejamento (constitution, spec, plan, tasks) |
+| [Ralph Loop](https://github.com/snarktank/ralph) | Técnica do loop de build iterativo (Geoffrey Huntley) |
+| [Autoresearch](https://github.com/karpathy/autoresearch) | Pattern de otimização experimental (Andrej Karpathy) |
+
+---
+
+## Author
+
+**Fabio FJ** — [@fabiofj2014](https://github.com/fabiofj2014)
+
+---
+
 ## Licença
 
 MIT © [Fabio FJ](https://github.com/fabiofj2014)
