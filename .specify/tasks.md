@@ -61,8 +61,8 @@
 - [x] Criar adapters/claude-code/CLAUDE.md (template)
 - [x] Criar adapters/opencode/spec-kit-loop.ts
 - [x] Criar adapters/codex-mcp/AGENTS.md (template)
-- [ ] Criar adapters/generic/AGENTS.md (template)
-- [ ] Criar adapters/generic/run.sh
+- [x] Criar adapters/generic/AGENTS.md (template)
+- [x] Criar adapters/generic/run.sh
 
 ## Fase 8 — MCP Server
 
