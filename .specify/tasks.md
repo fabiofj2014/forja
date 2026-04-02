@@ -17,7 +17,7 @@
 
 - [x] Criar core/ralph/__init__.py
 - [x] Criar core/ralph/task_parser.py (parse_tasks, next_pending, mark_done, mark_blocked)
-- [ ] Criar core/ralph/prompt_builder.py (build_prompt com task, constitution, contexto)
+- [x] Criar core/ralph/prompt_builder.py (build_prompt com task, constitution, contexto)
 - [ ] Criar core/ralph/loop.py (run_iteration, run_loop com stall detection)
 - [ ] Criar core/ralph/ralph.sh (bash entry point, banner, loop, stall abort)
 - [ ] Criar tests/test_task_parser.py (pendentes, concluídas, blocked, edge cases)
