@@ -10,7 +10,7 @@
 - [x] Criar core/metrics.py (read_metric, compare_metrics, is_improvement)
 - [x] Criar tests/test_config.py
 - [x] Criar tests/test_utils.py
-- [ ] Criar tests/test_git_manager.py (com tmp_path fixture e repo temporário)
+- [x] Criar tests/test_git_manager.py (com tmp_path fixture e repo temporário)
 - [ ] Criar tests/test_metrics.py
 
 ## Fase 2 — Ralph Loop (Build)
